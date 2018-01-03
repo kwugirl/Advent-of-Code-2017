@@ -11,4 +11,23 @@ def calculate_file_checksum file
   sum
 end
 
+def find_divisible_pair row
+  processed_input = row.split(" ").map(&:to_i).sort
+
+  processed_input.each_with_index do |digit, index|
+    rest_of_input = processed_input[(index+1)..-1]
+    pair = [digit, find_multiple(digit, rest_of_input)]
+
+    return pair unless pair[1] == 0
+  end
+end
+
+def find_multiple digit, candidates
+  candidates.each do |candidate|
+    return candidate if candidate % digit == 0
+  end
+
+  0
+end
+
 puts calculate_file_checksum("day_2_input.txt")

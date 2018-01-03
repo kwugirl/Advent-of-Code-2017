@@ -12,4 +12,10 @@ class Day2Test < Minitest::Test
   def test_calculate_file_checksum
     assert_equal 18, calculate_file_checksum("day_2_test_input.txt")
   end
+
+  def test_find_divisible_pair
+    assert_equal [2, 8], find_divisible_pair("5 9 2 8")
+    assert_equal [3, 9], find_divisible_pair("9 4 7 3")
+    assert_equal [3, 6], find_divisible_pair("3 8 6 5")
+  end
 end
