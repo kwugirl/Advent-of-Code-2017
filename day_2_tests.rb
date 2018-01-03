@@ -18,4 +18,8 @@ class Day2Test < Minitest::Test
     assert_equal [3, 9], find_divisible_pair("9 4 7 3")
     assert_equal [3, 6], find_divisible_pair("3 8 6 5")
   end
+
+  def test_calculate_file_evenly_divisible_checksum
+    assert_equal 9, calculate_file_evenly_divisible_checksum("day_2b_test_input.txt")
+  end
 end

@@ -30,4 +30,14 @@ def find_multiple digit, candidates
   0
 end
 
+def calculate_file_evenly_divisible_checksum file
+  sum = 0
+  File.readlines(file).each do |line|
+    pair = find_divisible_pair(line)
+    sum += pair[1]/pair[0]
+  end
+  sum
+end
+
 puts calculate_file_checksum("day_2_input.txt")
+puts calculate_file_evenly_divisible_checksum("day_2_input.txt")
